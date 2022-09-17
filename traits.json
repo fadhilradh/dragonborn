@@ -1,0 +1,10 @@
+[
+  {
+    "type": "backgroundColor",
+    "values": ["black", "white", "red", "blue"]
+  },
+  {
+    "type": "pattern",
+    "values": ["plain", "striped", "spotted", "patchy"]
+  }
+]
