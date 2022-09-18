@@ -22,7 +22,7 @@ class Dragon {
   constructor({ birthdate, name, traits } = {}) {
     this.birthdate = birthdate || DEFAULT_PROPERTIES.birthdate;
     this.name = name || DEFAULT_PROPERTIES.name;
-    this.traits = traits || [];
+    this.traits = traits || DEFAULT_PROPERTIES.randomTraits;
   }
 }
 
