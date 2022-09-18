@@ -2,12 +2,12 @@
   "name": "dragonborn-be",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "bin/server.js",
   "scripts": {
-    "dev": "nodemon index.js",
+    "dev": "nodemon ./bin/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "fadhil",
+  "author": "fadhil radhian",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.20"
