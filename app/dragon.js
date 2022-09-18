@@ -1,4 +1,4 @@
-const TRAITS = require("./traits.json");
+const TRAITS = require("../traits.json");
 
 const DEFAULT_PROPERTIES = {
   name: "Dragon",
