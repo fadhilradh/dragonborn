@@ -3,11 +3,11 @@ lockfileVersion: 5.4
 specifiers:
   express: ^4.18.1
   nodemon: ^2.0.20
-  pg: 7.4.3
+  pg: ^8.8.0
 
 dependencies:
   express: 4.18.1
-  pg: 7.4.3
+  pg: 8.8.0
 
 devDependencies:
   nodemon: 2.0.20
@@ -81,8 +81,9 @@ packages:
       fill-range: 7.0.1
     dev: true
 
-  /buffer-writer/1.0.1:
-    resolution: {integrity: sha512-I5M7UuSeDn5aQR2BSH2+270w9qdd2Rd5LB/XhTcIRdSmeLueMNlY3BaMoHtoASmjEQf/NOAqMIZaoAMSpomW6w==}
+  /buffer-writer/2.0.0:
+    resolution: {integrity: sha512-a7ZpuTZU1TRtnwyCNW3I5dc0wWNC3VR9S++Ewyk2HHZdrO3CQJqSpd+95Us590V6AL7JqUAH2IwZ/398PmNFgw==}
+    engines: {node: '>=4'}
     dev: false
 
   /bytes/3.1.2:
@@ -448,8 +449,8 @@ packages:
       ee-first: 1.1.1
     dev: false
 
-  /packet-reader/0.3.1:
-    resolution: {integrity: sha512-5hN3f+rVT3PRjNI+GYUKTolUo5Yhypmo97D5+6On6L4bVhnno5wzGTT3agB9u7llRfw6pEV4I1/obWSXTKDY1w==}
+  /packet-reader/1.0.0:
+    resolution: {integrity: sha512-HAKu/fG3HpHFO0AA8WE8q2g+gBJaZ9MG7fcKk+IJPLTGAD6Psw4443l+9DGRbOIh3/aXr7Phy0TjilYivJo5XQ==}
     dev: false
 
   /parseurl/1.3.3:
@@ -461,38 +462,54 @@ packages:
     resolution: {integrity: sha512-5DFkuoqlv1uYQKxy8omFBeJPQcdoE07Kv2sferDCrAq1ohOU+MSDswDIbnx3YAM60qIOnYa53wBhXW0EbMonrQ==}
     dev: false
 
-  /pg-connection-string/0.1.3:
-    resolution: {integrity: sha512-i0NV/CrSkFTaiOQs9AGy3tq0dkSjtTd4d7DfsjeDVZAA4aIHInwfFEmriNYGGJUfZ5x6IAC/QddoUpUJjQAi0w==}
+  /pg-connection-string/2.5.0:
+    resolution: {integrity: sha512-r5o/V/ORTA6TmUnyWZR9nCj1klXCO2CEKNRlVuJptZe85QuhFayC7WeMic7ndayT5IRIR0S0xFxFi2ousartlQ==}
     dev: false
 
-  /pg-pool/2.0.10_pg@7.4.3:
-    resolution: {integrity: sha512-qdwzY92bHf3nwzIUcj+zJ0Qo5lpG/YxchahxIN8+ZVmXqkahKXsnl2aiJPHLYN9o5mB/leG+Xh6XKxtP7e0sjg==}
+  /pg-int8/1.0.1:
+    resolution: {integrity: sha512-WCtabS6t3c8SkpDBUlb1kjOs7l66xsGdKpIPZsg4wR+B3+u9UAum2odSsF9tnvxg80h4ZxLWMy4pRjOsFIqQpw==}
+    engines: {node: '>=4.0.0'}
+    dev: false
+
+  /pg-pool/3.5.2_pg@8.8.0:
+    resolution: {integrity: sha512-His3Fh17Z4eg7oANLob6ZvH8xIVen3phEZh2QuyrIl4dQSDVEabNducv6ysROKpDNPSD+12tONZVWfSgMvDD9w==}
     peerDependencies:
-      pg: '>5.0'
+      pg: '>=8.0'
     dependencies:
-      pg: 7.4.3
+      pg: 8.8.0
     dev: false
 
-  /pg-types/1.12.1:
-    resolution: {integrity: sha512-7oR1vHzQdSlqa81S8476iSoUYQc6obearJ6RUuRB1OOdGDz9pDHLxmgYgcXCDL+XWHSocYQqwC/GDnwtKhGbWg==}
+  /pg-protocol/1.5.0:
+    resolution: {integrity: sha512-muRttij7H8TqRNu/DxrAJQITO4Ac7RmX3Klyr/9mJEOBeIpgnF8f9jAfRz5d3XwQZl5qBjF9gLsUtMPJE0vezQ==}
+    dev: false
+
+  /pg-types/2.2.0:
+    resolution: {integrity: sha512-qTAAlrEsl8s4OiEQY69wDvcMIdQN6wdz5ojQiOy6YRMuynxenON0O5oCpJI6lshc6scgAY8qvJ2On/p+CXY0GA==}
+    engines: {node: '>=4'}
     dependencies:
-      postgres-array: 1.0.3
+      pg-int8: 1.0.1
+      postgres-array: 2.0.0
       postgres-bytea: 1.0.0
       postgres-date: 1.0.7
       postgres-interval: 1.2.0
     dev: false
 
-  /pg/7.4.3:
-    resolution: {integrity: sha512-iLLcmnlUCDk/4YkH/KgiqiBW5DGS+A9nMxLJYftmcF+MoNyH9Yk39nueIs2W+OBuFqpydHqoMJtjWtutkC8yvg==}
-    engines: {node: '>= 4.5.0'}
+  /pg/8.8.0:
+    resolution: {integrity: sha512-UXYN0ziKj+AeNNP7VDMwrehpACThH7LUl/p8TDFpEUuSejCUIwGSfxpHsPvtM6/WXFy6SU4E5RG4IJV/TZAGjw==}
+    engines: {node: '>= 8.0.0'}
+    peerDependencies:
+      pg-native: '>=3.0.1'
+    peerDependenciesMeta:
+      pg-native:
+        optional: true
     dependencies:
-      buffer-writer: 1.0.1
-      packet-reader: 0.3.1
-      pg-connection-string: 0.1.3
-      pg-pool: 2.0.10_pg@7.4.3
-      pg-types: 1.12.1
+      buffer-writer: 2.0.0
+      packet-reader: 1.0.0
+      pg-connection-string: 2.5.0
+      pg-pool: 3.5.2_pg@8.8.0
+      pg-protocol: 1.5.0
+      pg-types: 2.2.0
       pgpass: 1.0.5
-      semver: 4.3.2
     dev: false
 
   /pgpass/1.0.5:
@@ -506,9 +523,9 @@ packages:
     engines: {node: '>=8.6'}
     dev: true
 
-  /postgres-array/1.0.3:
-    resolution: {integrity: sha512-5wClXrAP0+78mcsNX3/ithQ5exKvCyK5lr5NEEEeGwwM6NJdQgzIJBVxLvRW+huFpX92F2QnZ5CcokH0VhK2qQ==}
-    engines: {node: '>=0.10.0'}
+  /postgres-array/2.0.0:
+    resolution: {integrity: sha512-VpZrUqU5A69eQyW2c5CA1jtLecCsN2U/bD6VilrFDWq5+5UIEVO7nazS3TEcHf1zuPYO/sqGvUvW62g86RXZuA==}
+    engines: {node: '>=4'}
     dev: false
 
   /postgres-bytea/1.0.0:
@@ -575,11 +592,6 @@ packages:
 
   /safer-buffer/2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
-    dev: false
-
-  /semver/4.3.2:
-    resolution: {integrity: sha512-VyFUffiBx8hABJ9HYSTXLRwyZtdDHMzMtFmID1aiNAD2BZppBmJm0Hqw3p2jkgxP9BNt1pQ9RnC49P0EcXf6cA==}
-    hasBin: true
     dev: false
 
   /semver/5.7.1:
