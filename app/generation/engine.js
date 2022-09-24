@@ -5,6 +5,7 @@ class GenerationEngine {
   constructor() {
     this.generation = null;
     this.generationTimer = null;
+    this.generationId = null;
   }
 
   start() {
@@ -15,11 +16,10 @@ class GenerationEngine {
     clearTimeout(this.generationTimer);
   }
 
-  buildNewGeneration() {
+  async buildNewGeneration() {
     this.generation = new Generation();
-    console.log("🚀", this.generation);
 
-    GenerationTable.store(this.generation);
+    this.generation.generationId = await GenerationTable.store(this.generation);
 
     this.generationTimer = setTimeout(
       () => this.buildNewGeneration(),
