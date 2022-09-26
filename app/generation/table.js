@@ -11,7 +11,7 @@ class GenerationTable {
 
       return res.rows[0].id;
     } catch (error) {
-      console.error;
+      console.error(error);
     } finally {
       client.release();
     }

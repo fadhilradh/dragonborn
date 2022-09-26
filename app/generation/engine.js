@@ -5,7 +5,6 @@ class GenerationEngine {
   constructor() {
     this.generation = null;
     this.generationTimer = null;
-    this.generationId = null;
   }
 
   start() {
