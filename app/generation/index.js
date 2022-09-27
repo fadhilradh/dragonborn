@@ -22,11 +22,6 @@ class Generation {
   }
 
   async newDragon() {
-    console.log(
-      "🚀 ~ file: index.js ~ line 26 ~ Generation ~ newDragon ~ Date.now() > this.expiration",
-      Date.now() > this.expiration
-    );
-
     if (Date.now() > this.expiration) {
       throw new Error(`This generation expired on ${this.expiration}`);
     }
