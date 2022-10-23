@@ -13,10 +13,7 @@ TRAITS.forEach((TRAIT) => {
         if (error) console.error(error);
 
         const traitId = response.rows[0].id;
-        console.log(
-          "🚀 ~ file: configureTrait.js ~ line 15 ~ traitValues.forEach ~ traitId",
-          traitId
-        );
+        console.log("traits ID inserted", traitId);
       }
     );
   });

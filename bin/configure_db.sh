@@ -14,6 +14,6 @@ psql -U skygazer dragonborn < ./bin/sql/dragon.sql
 psql -U skygazer dragonborn < ./bin/sql/trait.sql
 psql -U skygazer dragonborn < ./bin/sql/dragonTrait.sql
 
-node ./insertTraits.js
+node ./bin/insertTraits.js
 
 echo "Database and tables configured."

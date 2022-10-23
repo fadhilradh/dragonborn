@@ -1,16 +1,32 @@
 const pool = require("../../dbPool");
+const DragonTraitTable = require("../dragonTrait/table");
+const TraitTable = require("../trait/table");
 
 class DragonTable {
   static async store(dragon) {
-    const client = await pool.connect();
     const { nickname, birthdate, generationId } = dragon;
+    return new Promise((resolve, reject) => {
+      pool.query(
+        'INSERT INTO dragon(nickname, birthdate, "generationId") VALUES($1, $2, $3) RETURNING id',
+        [nickname, birthdate, generationId],
+        (error, response) => {
+          if (error) return reject(error);
+          const dragonId = response.rows[0].id;
 
-    const res = await client.query(
-      'INSERT INTO dragon(nickname, birthdate, "generationId") VALUES($1, $2, $3) RETURNING id',
-      [nickname, birthdate, generationId]
-    );
-    client.release();
-    return res.rows[0];
+          Promise.all(
+            dragon.traits.map(({ traitType, traitValue }) => {
+              return DragonTraitTable.store({
+                dragonId,
+                traitType,
+                traitValue,
+              });
+            })
+          )
+            .then(() => resolve({ dragonId }))
+            .catch((error) => reject(error));
+        }
+      );
+    });
   }
 }
 

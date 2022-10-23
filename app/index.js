@@ -1,7 +1,7 @@
 const express = require("express");
 const GenerationEngine = require("./generation/engine.js");
-const dragonRouter = require("./api/dragon.js");
-const generationRouter = require("./api/generation.js");
+const dragonRouter = require("./route/dragon.js");
+const generationRouter = require("./route/generation.js");
 
 const engine = new GenerationEngine();
 

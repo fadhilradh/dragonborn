@@ -23,7 +23,7 @@ class Generation {
 
   async newDragon() {
     if (Date.now() > this.expiration) {
-      throw new Error(`This generation expired on ${this.expiration}`);
+      console.error(`This generation expired on ${this.expiration}`);
     }
 
     const dragon = new Dragon({ generationId: this.generationId });
