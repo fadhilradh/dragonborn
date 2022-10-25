@@ -1,6 +1,5 @@
 const pool = require("../../dbPool");
 const DragonTraitTable = require("../dragonTrait/table");
-const TraitTable = require("../trait/table");
 
 class DragonTable {
   static async store(dragon) {
