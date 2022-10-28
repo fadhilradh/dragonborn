@@ -14,6 +14,7 @@ app.locals.engine = engine;
 
 app.use("/dragon", dragonRouter);
 app.use("/generation", generationRouter);
+
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
 

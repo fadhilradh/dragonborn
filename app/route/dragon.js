@@ -14,4 +14,16 @@ router.get("/new", async (req, res, next) => {
   }
 });
 
+router.get("/detail/:id", async (req, res, next) => {
+  const dragonId = req.params.id;
+
+  DragonTable.getById({ dragonId })
+    .then((dragon) => {
+      res.json({ dragon });
+    })
+    .catch((error) => {
+      console.error(error);
+      next(err);
+    });
+});
 module.exports = router;

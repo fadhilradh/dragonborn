@@ -1,3 +1,4 @@
+const { response } = require("express");
 const pool = require("../../dbPool");
 const DragonTraitTable = require("../dragonTrait/table");
 
@@ -25,6 +26,23 @@ class DragonTable {
             .catch((error) => reject(error));
         }
       );
+    });
+  }
+
+  static getById({ dragonId }) {
+    return new Promise((resolve, reject) => {
+      const query = {
+        name: "fetch-dragon-by-id",
+        text: "SELECT * FROM dragon WHERE id = $1 ",
+        values: [dragonId],
+      };
+      pool.query(query, (error, res) => {
+        if (error) return reject(error);
+
+        const resp = res.rows[0];
+
+        resolve(resp);
+      });
     });
   }
 }
