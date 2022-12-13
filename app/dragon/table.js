@@ -33,13 +33,15 @@ class DragonTable {
     return new Promise((resolve, reject) => {
       const query = {
         name: "fetch-dragon-by-id",
-        text: "SELECT * FROM dragon WHERE id = $1 ",
+        text: `SELECT birthdate, nickname, "generationId" FROM dragon WHERE id = $1`,
         values: [dragonId],
       };
       pool.query(query, (error, res) => {
         if (error) return reject(error);
 
-        const resp = res.rows[0];
+        if (response?.rows?.length === 0) return reject(new Error("no dragon"));
+
+        const resp = res?.rows[0];
 
         resolve(resp);
       });

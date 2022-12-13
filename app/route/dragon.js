@@ -1,4 +1,5 @@
 const { Router } = require("express");
+const { getDragonWithTraits } = require("../dragon/helpers");
 const DragonTable = require("../dragon/table");
 
 const router = new Router();
@@ -17,7 +18,7 @@ router.get("/new", async (req, res, next) => {
 router.get("/detail/:id", async (req, res, next) => {
   const dragonId = req.params.id;
 
-  DragonTable.getById({ dragonId })
+  getDragonWithTraits({ dragonId })
     .then((dragon) => {
       res.json({ dragon });
     })
@@ -26,4 +27,5 @@ router.get("/detail/:id", async (req, res, next) => {
       next(err);
     });
 });
+
 module.exports = router;
